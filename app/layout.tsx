@@ -5,6 +5,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import SocialLinks from "@/ui/components/socialLinks";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -68,6 +69,7 @@ export default function RootLayout({
         <Navbar />
         <main>
           {children}
+          <SocialLinks />
         </main>
         <Footer />
       </body>

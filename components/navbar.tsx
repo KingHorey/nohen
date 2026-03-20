@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { NohenLogo } from "./nohenLogo"
 const navLinks = [
   { href: "/", label: "HOME" },
-  { href: "/about", label: "ABOUT US" },
+  { href: "/about-us", label: "ABOUT US" },
   { href: "/services", label: "SERVICES" },
   { href: "/case-studies", label: "CASE STUDIES" },
   { href: "/contact", label: "CONTACT" },

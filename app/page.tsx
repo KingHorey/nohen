@@ -18,7 +18,6 @@ export default function Home() {
       <Process />
       <FeaturedProjects />
       <Faq />
-      <SocialLinks />
     </main>
   );
 }
