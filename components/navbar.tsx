@@ -47,7 +47,7 @@ export default function Navbar() {
                     className="relative group flex flex-col items-center gap-[5px]"
                   >
                     <span
-                      className="text-white text-[11px] tracking-[0.15em] font-medium transition-colors duration-200 group-hover:text-[#EFBF04] font-barlow-condensed"
+                      className="text-white text-[11px] tracking-[0.15em] font-medium transition-colors duration-200 group-hover:text-[#EFBF04] font-dm-sans"
                     >
                       {label}
                     </span>
