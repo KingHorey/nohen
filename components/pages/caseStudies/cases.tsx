@@ -31,37 +31,37 @@ const Cases = () => {
                   image: NoLocation,
                   title: "No location",
                   location: "",
-                  href: "#",
+                  href: "/project-detail/no-location",
                 },
                 {
                   image: EstaazHotel,
                   title: "Estaaz Hotel",
                   location: "OWERRI",
-                  href: "#",
+                  href: "/project-detail/estaaz-hotel-owerri",
                 },
                 {
                   image: MultiStorey,
                   title: "Multi Storey...",
                   location: "Gudu Abuja",
-                  href: "#",
+                  href: "/project-detail/multi-storey-gudu-abuja",
                 },
                 {
                   image: EzialaImage,
                   title: "Eziala Town Hall",
                   location: "Mbise",
-                  href: "#",
+                  href: "/project-detail/eziala-town-hall-mbise",
                 },
                 {
                   image: HillTop,
                   title: "HillTop residence",
                   location: "Abuja",
-                  href: "",
+                  href: "/project-detail/hilltop-residence-abuja",
                 },
                 {
                   image: CountyImage,
                   title: "County Home...",
                   location: "Abia State",
-                  href: "#",
+                  href: "/project-detail/county-home-abia-state",
                 },
               ]}
             />

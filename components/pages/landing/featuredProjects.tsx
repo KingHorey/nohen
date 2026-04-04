@@ -14,21 +14,21 @@ const projectCard: ProjectCard[] = [
     description:
       "A complete interior and structural renovation that transformed an outdated apartment.",
     image: ImageFive,
-    href: "#",
+    href: "/project-detail/hilltop-residence-abuja",
   },
   {
     title: "Estaaz Hotel - Owerri",
     description:
       "Contemporary residential project designed with clean architectural lines, spacious interiors.",
     image: ImageSix,
-    href: "#",
+    href: "/project-detail/estaaz-hotel-owerri",
   },
   {
     title: "AVM Residential Apartments - Enugu",
     description:
       "A well-planned commercial office development featuring modern design, efficient workspace.",
     image: CorporateOffice,
-    href: "#",
+    href: "/project-detail/avm-residential-apartments-enugu",
   },
 ];
 
