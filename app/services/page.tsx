@@ -12,6 +12,14 @@ import SectionTag from "@/components/sectionTag";
 import ArchitecturalDesign from "@/assets/images/68a687ca482b9536e4542097_service-icon-2 1(1).png";
 import { useState } from "react";
 import PageFade from "@/components/animations/pageFade";
+import Syncell from "@/assets/svgs/syncell.svg";
+import Vireon from "@/assets/svgs/vireon.svg";
+import Sisyphus from "@/assets/svgs/sisyphus.svg";
+import Bridgr from "@/assets/svgs/bridgr.svg";
+import Converra from "@/assets/svgs/converra.svg";
+import Nietzsche from "@/assets/svgs/nietzsche.svg";
+import Layers from "@/assets/svgs/layers.svg";
+import Nexora from "@/assets/svgs/nexora.svg";
 
 const services = [
   { name: "Architectural Design", id: "architecturalDesign" },
@@ -22,6 +30,8 @@ const services = [
 
 const Page = () => {
   const [activeService, setActiveService] = useState<string | null>(null);
+  const row1 = [Sisyphus, Nietzsche, Nexora, Bridgr];
+  const row2 = [Layers, Syncell, Vireon, Converra];
 
   return (
     <PageFade>
@@ -114,7 +124,33 @@ const Page = () => {
             reverse={false}
           />
         </div>
-        <div className="bg-[#EFBF04] h-108"></div>
+        <section className="bg-[#EFBF04] py-12 overflow-hidden space-y-8">
+          <div id="supportedBrands" className="relative space-y-8">
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-[#EFBF04] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-[#EFBF04] to-transparent z-10" />
+            <div className="flex w-max animate-marquee gap-16 items-center">
+              {[...row1, ...row1, ...row1, ...row1].map((Brand, index) => (
+                <div
+                  key={index}
+                  className="shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <Brand className="h-16 w-auto text-black" />
+                </div>
+              ))}
+            </div>
+
+            <div className="flex w-max animate-marquee-reverse gap-16 items-center">
+              {[...row2, ...row2, ...row2, ...row2].map((Brand, index) => (
+                <div
+                  key={index}
+                  className="shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                >
+                  <Brand className="h-16 w-auto text-black" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </section>
     </PageFade>
   );
