@@ -42,7 +42,7 @@ export default function Navbar() {
               <NohenLogo useDarkOnLight={isProjectDetailPage} />
             </div>
           </Link>
-          <ul className="hidden md:flex items-center gap-8 lg:gap-10">
+          <ul className="hidden lg:flex items-center gap-8 lg:gap-10">
             {navLinks.map(({ href, label }) => {
               const isActive =
                 href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -70,7 +70,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="#"
-            className="hidden rounded-full py-4 md:inline-flex items-center gap-3 px-5 shrink-0 group transition-all duration-300 hover:brightness-110 active:scale-95 bg-[#EFBF04]"
+            className="hidden rounded-full py-4 lg:inline-flex items-center gap-3 px-5 shrink-0 group transition-all duration-300 hover:brightness-110 active:scale-95 bg-[#EFBF04]"
           >
             <span className="text-black text-[11px] tracking-[0.14em] font-bold whitespace-nowrap font-barlow-condensed">
               BOOK A CONSULTATION
@@ -82,7 +82,7 @@ export default function Navbar() {
             />
           </Link>
           <button
-            className={`md:hidden p-1 ${isProjectDetailPage ? "text-black" : "text-white"}`}
+            className={`lg:hidden p-1 ${isProjectDetailPage ? "text-black" : "text-white"}`}
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -97,7 +97,7 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className={`relative z-10 md:hidden overflow-hidden ${isProjectDetailPage
+              className={`relative z-10 lg:hidden overflow-hidden ${isProjectDetailPage
                 ? "border-t border-black/10 bg-white"
                 : "border-t border-white/10 bg-[#0e0e0e]"
                 }`}
