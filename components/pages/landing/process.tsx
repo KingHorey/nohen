@@ -17,15 +17,15 @@ import { Reveal, Stagger, StaggerItem } from "@/components/animations/reveal";
 const Process = () => {
   return (
     <Reveal>
-      <section id="ourProcess" className="relative bg-white p-17.5 space-y-10">
+      <section id="ourProcess" className="relative space-y-10 bg-white p-6 md:p-17.5">
         <SectionTag text="Our Process" className="text-black" />
-        <div className="flex items-center gap-x-10">
+        <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-x-10">
           <GradientText
             text="We guide you every step of the way, from blueprint to building."
             className="font-dm-sans md:text-[40px]!"
           />
           <p
-            className="text-right text-[25px] font-light font-outfit"
+            className="text-left text-[18px] font-light font-outfit md:text-right md:text-[25px]"
             style={{ color: "gray", letterSpacing: "-4%" }}
           >
             From design to construction, from foundation to execution, we build
@@ -108,30 +108,36 @@ export const InfoView = ({
 }: InfoProps) => {
   return (
     <div
-      className={`${clsx("relative w-full overflow-hidden flex items-center py-5 p-0 rounded-none ")}`}
+      className={`${clsx("relative flex w-full items-center overflow-hidden rounded-none p-0 py-5")}`}
       style={{ backgroundColor: background }}
     >
       {image && (
         <div className="absolute inset-0">
-          <Image src={image} alt="" className="inset-0 object-cover" />
+          <Image src={image} alt="" fill className="inset-0 object-cover" sizes="100vw" />
         </div>
       )}
       <div
-        className={`${clsx("flex justify-between gap-x-5 w-full z-999 px-15 items-center", className)}`}
+        className={`${clsx("z-999 flex w-full flex-col items-start gap-5 px-5 md:flex-row md:items-center md:justify-between md:gap-x-5 md:px-15", className)}`}
       >
+        <div className="flex items-center w-full">
+          <p
+            className={`${clsx("w-full font-dm-sans text-[28px] font-medium md:w-72.5 md:text-[40px]", titleClassName)}`}
+          >
+            {title}
+
+          </p>
+          <div className="pr-2">
+            <Icon className="mx-auto md:ml-auto h-32 w-32 md:h-auto md:w-fit md:hidden" />
+          </div>
+        </div>
         <p
-          className={`${clsx("font-dm-sans w-72.5 font-medium text-[40px]", titleClassName)}`}
-        >
-          {title}
-        </p>
-        <p
-          className={`${clsx("font-outfit text-[20px] max-w-133.5 font-extralight", descriptionClassName)}`}
+          className={`${clsx("max-w-full font-outfit sm:text-base font-extralight md:max-w-133.5 md:text-[20px]", descriptionClassName)}`}
           style={{ letterSpacing: "-4%" }}
         >
           {description}
         </p>
-        <div>
-          <Icon className="w-fit ml-auto" />
+        <div className="md:block hidden">
+          <Icon className="ml-auto h-12 w-12 md:h-auto md:w-fit" />
         </div>
       </div>
     </div>

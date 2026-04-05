@@ -35,17 +35,17 @@ const projectCard: ProjectCard[] = [
 const FeaturedProjects = () => {
   return (
     <Reveal>
-      <section id="featuredProjects" className="p-17.5 relative space-y-5">
+      <section id="featuredProjects" className="relative space-y-5 p-6 md:p-17.5">
         <SectionTag text="Featured Projects" className="" />
-        <div className="flex items-end w-full justify-between">
+        <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <p
-            className="text-[#FAFAFA]/10 text-[62px] w-1/2 font-dm-sans"
+            className="w-full text-[34px] font-dm-sans text-[#FAFAFA]/10 md:w-1/2 md:text-[62px]"
             style={{ letterSpacing: "-8%" }}
           >
             A peek into brilliant works we have done.
           </p>
           <Button
-            className="gap-4.25 py-[14.15px] rounded-full bg-[#EFBF04] text-black h-17.5 min-w-66.25 hover:bg-[#EFBF04]/90"
+            className="h-14 w-full gap-4.25 rounded-full bg-[#EFBF04] py-[14.15px] text-black hover:bg-[#EFBF04]/90 sm:w-fit md:h-17.5 md:min-w-66.25"
             asChild
           >
             <Link href="/case-studies">

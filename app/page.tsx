@@ -20,7 +20,7 @@ export default function Home() {
           title="Complexity, Resolved. Excellence, Delivered"
           metaText={<></>}
           description="Nohen Constructii is steady transforming challenging ideas, constrained sites, and complex designs into exceptional built environments."
-          buttonLink="/about"
+          buttonLink="/contact#contactForm"
           isLink={true}
           buttonText="Start a project"
         />

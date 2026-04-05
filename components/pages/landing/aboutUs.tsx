@@ -41,13 +41,13 @@ const info = [
 const AboutUs = () => {
   return (
     <Reveal>
-      <section id="about" className="bg-white flex p-17.5 space-x-10">
-        <div className="space-y-5 md:w-1/2">
+      <section id="about" className="bg-white flex flex-col lg:flex-row gap-10 p-8 md:p-17.5">
+        <div className="space-y-5 w-full lg:w-1/2">
           <SectionTag text="About Us" className="text-black" />
           <GradientText text="From homes to offices, we bring your vision to life. Our results speak for themselves." />
-          <div className="flex items-center gap-x-5 justify-between w-full">
+          <div className="flex items-center gap-y-5 md:flex-row flex-col flex-col-reverse gap-x-5 justify-between w-full">
             <Button
-              className="rounded-full md:w-65.75 px-[14.9px] h-17.5 gap-10"
+              className="rounded-full md:w-65.75 px-[14.9px] mr-auto h-17.5 gap-10"
               asChild
             >
               <Link href="/about-us#ourStory">
@@ -55,7 +55,7 @@ const AboutUs = () => {
                 <ArrowRightIcon />
               </Link>
             </Button>
-            <p className="text-[25px] text-right" style={{ color: "gray" }}>
+            <p className="text-[25px] text-left md:text-right" style={{ color: "gray" }}>
               Good design is invisible. It supports life quietly, with clarity
               and purpose.
             </p>
@@ -72,8 +72,8 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 min-h-full">
-          <Stagger className="grid grid-cols-2 font-dm-sans py-5">
+        <div className="w-full lg:w-1/2 min-h-full">
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 font-dm-sans py-5">
             {info.map(({ title, description, showIcon, count }, index) => (
               <StaggerItem key={index}>
                 <StatItem

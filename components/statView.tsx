@@ -53,24 +53,25 @@ export default function StatItem({
     <li
       ref={ref}
       className={`
-        p-5 h-135 text-right flex flex-col justify-center
+        p-5 min-h-64 md:h-135 text-left md:text-right flex flex-col justify-center
         border-gray-200/10 space-y-5
-        ${index % 2 === 0 ? "border-r border-r-gray-200/40" : ""}
-        ${index < total - 2 ? "border-b border-gray-100" : ""}
+        ${index % 2 === 0 ? "md:border-r md:border-r-gray-200/40" : ""}
+        ${index < total - 1 ? "border-b border-gray-100" : ""}
+        ${index < total - 2 ? "md:border-b md:border-gray-100" : "md:border-b-0"}
         ${className}
       `}
     >
       <h4
-        className="text-[38px] justify-end text-black inline-flex gap-x-0 items-center uppercase font-medium"
+        className="text-[32px] md:text-[38px] md:justify-end text-black inline-flex gap-x-0 items-center uppercase font-medium"
         style={{ letterSpacing: "-0.04em", lineHeight: "115.5%" }}
       >
         {animatedCount}
         {showIcon && <PlusIcon />}
       </h4>
       <div className="space-y-5">
-        <p className="font-dm-sans text-[30px] text-[#363636]">{title}</p>
+        <p className="font-dm-sans text-[24px] md:text-[30px] text-[#363636]">{title}</p>
         <p
-          className="line-clamp-3 font-outfit text-right text-[20px] font-light"
+          className="line-clamp-3 font-outfit text-left md:text-right text-[18px] md:text-[20px] font-light"
           style={{ color: "gray", lineHeight: "1.4" }}
         >
           {description}
@@ -79,5 +80,4 @@ export default function StatItem({
     </li>
   )
 }
-
 

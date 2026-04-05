@@ -14,7 +14,7 @@ const Page = () => {
           alt=""
           image={ContactPageImage}
           buttonText="Start a project"
-          isLink={false}
+          isLink={true}
           buttonLink="#contactForm"
           description="Discover our collection of modern architectural solutions for beautiful home. interiors with exceptional craftsmanship."
           metaText="Contact Us"

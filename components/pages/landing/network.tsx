@@ -22,16 +22,16 @@ const Network = () => {
     <Reveal>
       <section
         id="network"
-        className="p-17.5 bg-white space-y-12 overflow-hidden"
+        className="p-8 md:p-17.5 bg-white space-y-5 md:space-y-12 overflow-hidden"
       >
         <SectionTag text="GLobal Network" className="text-black" />
-        <div className="flex items-end justify-between">
+        <div className="flex md:flex-row space-y-3 flex-col items-end justify-between">
           <GradientText
             text="Partnering with leading enterprises around the world."
-            className="md:w-3/6"
+            className="w-full lg:w-3/6"
           />
           <Button
-            className="rounded-full min-h-17.5 gap-5 md:w-65.75 uppercase px-[9.9px] py-[14.15px]"
+            className="mr-auto md:mr-0 rounded-full min-h-17.5 gap-5 md:w-65.75 uppercase px-[9.9px] py-[14.15px]"
             asChild
           >
             <Link href="/contact/#contactForm">

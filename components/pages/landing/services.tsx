@@ -56,42 +56,43 @@ const Services = () => {
     <Reveal>
       <section
         id="services"
-        className="relative max-h-237 py-16 flex items-center p-17.5"
+        className="relative flex items-center overflow-hidden px-5 py-12 md:max-h-237 md:p-17.5 md:py-16"
       >
         <div className="absolute inset-0">
           <Image
             src={ServicesImage}
-            className=""
+            fill
+            className="object-cover"
+            sizes="100vw"
             alt="nohen contrustii services"
           />
         </div>
-        <div className="z-9999 relative flex flex-col justify-center space-y-10">
+        <div className="z-9999 relative flex w-full flex-col justify-center space-y-10">
           <SectionTag className="" text="Our Services" />
           <div>
-            <Stagger className="grid grid-cols-2 font-dm-sans py-5">
+            <Stagger className="grid grid-cols-1 py-5 font-dm-sans md:grid-cols-2">
               {services.map(({ title, id, description }, index) => (
                 <StaggerItem
                   key={id}
                   className={`
-        p-5
-        border-sidebar-border
-        border-dashed
-
-        ${index % 2 === 0 ? "border-r border-r-gray-200/40" : ""}   /* left column only */
-        ${index < services.length - 2 ? "border-b border-gray-100" : ""} /* not last row */
+        p-5 md:p-6
+        border-sidebar-border border-dashed
+        ${index % 2 === 0 ? "md:border-r md:border-r-gray-200/40" : ""}
+        ${index < services.length - 1 ? "border-b border-gray-100" : ""}
+        ${index < services.length - 2 ? "md:border-b md:border-gray-100" : "md:border-b-0"}
       `}
                 >
                   <h4
-                    className="text-[38px] uppercase font-medium"
+                    className="text-[28px] uppercase font-medium md:text-[38px]"
                     style={{ letterSpacing: "-4%", lineHeight: "115.5%" }}
                   >
                     {title}
                   </h4>
                   <p
-                    className="font-outfit text-justify text-[20px] font-light"
+                    className="font-outfit text-left text-[18px] font-light md:text-justify md:text-[20px]"
                     style={{
                       color: "gray",
-                      lineHeight: "-4%",
+                      lineHeight: "1.4",
                     }}
                   >
                     {description}
@@ -100,21 +101,17 @@ const Services = () => {
               ))}
             </Stagger>
 
-            <div className="w-full flex items-center justify-center">
-              <Link href="/services" className="mx-auto w-fit">
-                <Button
-                  className=" ml-auto gap-5 rounded-full md:w-69.25 px-[14.15px] py-[9.9px] text-black uppercase font-semibold h-17.5"
-                  style={{ backgroundColor: "#EFBF04" }}
-                  asChild
-                >
-                  <Link href="/services">
-                    <p className="text-sm! font-dm-sans">
-                      More of our services
-                    </p>
-                    <ArrowIcon />
-                  </Link>
-                </Button>
-              </Link>
+            <div className="flex w-full items-center justify-center pt-4 md:pt-0">
+              <Button
+                className="mx-auto h-14 w-full gap-5 rounded-full px-[14.15px] py-[9.9px] text-black uppercase font-semibold sm:w-fit md:h-17.5 md:w-69.25"
+                style={{ backgroundColor: "#EFBF04" }}
+                asChild
+              >
+                <Link href="/services" className="gap-3">
+                  <p className="text-sm! font-dm-sans">More of our services</p>
+                  <ArrowIcon />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

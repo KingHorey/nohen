@@ -44,10 +44,10 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-4 text-gray-400">Supports</h4>
           <div className="space-y-3 text-lg text-gray-400">
-            <p>
+            <p className="font-dm-sans">
               Call us directly? <br />
               <span className="underline text-white -tracking-widest font-dm-sans">
-                (123) 567 8901
+                (234) 9033899576
               </span>
             </p>
             <p>
@@ -62,7 +62,7 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-4 text-gray-400">
             Stay in the Loop.
           </h4>
-          <p className="text-lg text-gray-300 leading-relaxed max-w-xs">
+          <p className="text-lg text-gray-300 font-dm-sans leading-relaxed max-w-xs" style={{ lineHeight: "99%", letterSpacing: "-4%" }}>
             Get design insights and project updates straight in your inbox
           </p>
         </div>

@@ -59,11 +59,11 @@ const Testimonials = () => {
     <Reveal>
       <section
         id="testimonials"
-        className="h-260 bg-[#F6F4F0] px-6 py-14 md:px-17.5 md:py-17.5"
+        className="bg-[#F6F4F0] px-5 py-12 md:px-10 md:py-14 lg:h-260 lg:px-17.5 lg:py-17.5"
       >
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.45fr] lg:items-stretch lg:gap-12">
-          <div className="grid gap-5 sm:grid-cols-2 lg:max-w-196.5">
-            <div className="relative h-full overflow-hidden">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.45fr] lg:items-stretch lg:gap-12">
+          <div className="grid gap-4 sm:grid-cols-2 lg:max-w-196.5">
+            <div className="relative h-[420px] overflow-hidden sm:h-full">
               <div className="flex h-max w-full animate-marquee-vertical flex-col gap-5">
                 {[...firstColumn, ...firstColumn, ...firstColumn].map(
                   ({ quote, name, location }, index) => (
@@ -91,7 +91,7 @@ const Testimonials = () => {
               </div>
             </div>
 
-            <div className="relative h-full overflow-hidden">
+            <div className="relative hidden h-[420px] overflow-hidden sm:block sm:h-full">
               <div className="flex h-full w-full animate-marquee-vertical-reverse flex-col gap-5">
                 {[...secondColumn, ...secondColumn, ...secondColumn].map(
                   ({ quote, name, location }, index) => (
@@ -121,21 +121,21 @@ const Testimonials = () => {
           </div>
 
           <div
-            className="flex h-full flex-col  gap-8 pt-8 lg:justify-self-end lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
+            className="flex h-full flex-col gap-8 pt-2 lg:justify-self-end lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
             id="testimonialHeading"
           >
             <div className="space-y-4">
               <SectionTag text="Testimonials" className="text-black" />
               <GradientText
                 text="Globally reputed for client satisfaction."
-                className="text-[38px] leading-tight md:text-[50px]"
+                className="text-[32px] leading-tight md:text-[50px]"
               />
               <p className="max-w-md font-satoshi text-black/60">
                 What our happy clients are saying about our quality of execution
                 and on-site professionalism.
               </p>
               <Button
-                className="h-14 w-fit rounded-full bg-black px-6 uppercase hover:bg-black/90"
+                className="h-14 w-full rounded-full bg-black px-6 uppercase hover:bg-black/90 sm:w-fit"
                 asChild
               >
                 <Link href="/contact/#contactForm" className="gap-3">
@@ -144,7 +144,7 @@ const Testimonials = () => {
                 </Link>
               </Button>
             </div>
-            <ArtIcon />
+            <ArtIcon className="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-full" />
           </div>
         </div>
       </section>

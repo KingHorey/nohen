@@ -29,13 +29,12 @@ export default function Navbar() {
   return (
     <header>
       <nav
-        className={`w-full fixed z-9999 top-0 overflow-hidden py-3 transition-colors duration-300 ${
-          isProjectDetailPage
-            ? "bg-white"
-            : scrolled
-              ? "bg-black/95 backdrop-blur-sm"
-              : "bg-transparent"
-        }`}
+        className={`w-full fixed z-9999999 top-0 overflow-hidden py-3 transition-colors duration-300 ${isProjectDetailPage
+          ? "bg-white"
+          : scrolled
+            ? "bg-black/95 backdrop-blur-sm"
+            : "bg-transparent"
+          }`}
       >
         <div className="relative z-10 flex items-center justify-between px-6 md:px-10 lg:px-16 h-18">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
@@ -54,17 +53,15 @@ export default function Navbar() {
                     className="relative group flex flex-col items-center gap-1.25"
                   >
                     <span
-                      className={`${
-                        isProjectDetailPage ? "text-black" : "text-white"
-                      } text-[14px] tracking-[0.15em] font-medium transition-colors duration-200 group-hover:text-[#EFBF04] font-dm-sans`}
+                      className={`${isProjectDetailPage ? "text-black" : "text-white"
+                        } text-[14px] tracking-[0.15em] font-medium transition-colors duration-200 group-hover:text-[#EFBF04] font-dm-sans`}
                     >
                       {label}
                     </span>
                     {/* Gold underline — always visible for active, slides in on hover */}
                     <span
-                      className={`h-0.5 bg-[#EFBF04] transition-all duration-300 ${
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
+                      className={`h-0.5 bg-[#EFBF04] transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
                     />
                   </Link>
                 </li>
@@ -100,11 +97,10 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className={`relative z-10 md:hidden overflow-hidden ${
-                isProjectDetailPage
-                  ? "border-t border-black/10 bg-white"
-                  : "border-t border-white/10 bg-[#0e0e0e]"
-              }`}
+              className={`relative z-10 md:hidden overflow-hidden ${isProjectDetailPage
+                ? "border-t border-black/10 bg-white"
+                : "border-t border-white/10 bg-[#0e0e0e]"
+                }`}
             >
               <ul className="flex flex-col px-6 py-4 gap-1">
                 {navLinks.map(({ href, label }, i) => {
@@ -123,13 +119,12 @@ export default function Navbar() {
                         className="flex items-center justify-between py-3 border-b border-white/5 group"
                       >
                         <span
-                          className={`text-[13px] tracking-[0.14em] font-medium transition-colors duration-200 font-barlow-condensed ${
-                            isActive
-                              ? "text-[#EFBF04]"
-                              : isProjectDetailPage
-                                ? "text-black/80 group-hover:text-[#EFBF04]"
-                                : "text-white/80 group-hover:text-[#EFBF04]"
-                          }`}
+                          className={`text-[13px] tracking-[0.14em] font-medium transition-colors duration-200 font-barlow-condensed ${isActive
+                            ? "text-[#EFBF04]"
+                            : isProjectDetailPage
+                              ? "text-black/80 group-hover:text-[#EFBF04]"
+                              : "text-white/80 group-hover:text-[#EFBF04]"
+                            }`}
                         >
                           {label}
                         </span>

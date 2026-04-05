@@ -9,7 +9,7 @@ import { Reveal } from "@/components/animations/reveal";
 const ScheduledHours = () => {
   return (
     <Reveal>
-      <div className="p-10 bg-pink-50">
+      <div className="p-10 bg-pink-50" id="workHours">
         <div className="flex gap-10">
           <div>
             <Image
