@@ -48,9 +48,9 @@ const Page = () => {
           key={"services"}
         />
         <div className="bg-white">
-          <div className="p-17.5 flex items-center justify-between">
+          <div className="flex flex-col items-start gap-6 px-5 py-8 md:px-10 md:py-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:p-17.5">
             <SectionTag text="our services" className={"text-black"} />
-            <ul className="flex items-center gap-x-10">
+            <ul className="flex w-full flex-wrap items-center gap-x-6 gap-y-3 lg:w-auto lg:gap-x-10">
               {services.map((service, index) => {
                 const isActive = activeService === service.id;
                 const scrollToService = () => {
@@ -62,11 +62,10 @@ const Page = () => {
                   <li
                     key={index}
                     onClick={scrollToService}
-                    className={`text-[25px] font-dm-sans transition-all duration-300 cursor-pointer ${
-                      isActive
-                        ? "bg-linear-to-r from-[#181818] to-[#EFBF04] bg-clip-text text-transparent border-b-2 border-[#EFBF04]"
-                        : "text-black"
-                    }`}
+                    className={`cursor-pointer text-[18px] font-dm-sans transition-all duration-300 lg:text-[25px] ${isActive
+                      ? "bg-linear-to-r from-[#181818] to-[#EFBF04] bg-clip-text text-transparent border-b-2 border-[#EFBF04]"
+                      : "text-black"
+                      }`}
                   >
                     <p>{service.name}</p>
                   </li>

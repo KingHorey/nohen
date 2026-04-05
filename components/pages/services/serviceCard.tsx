@@ -35,7 +35,7 @@ export default function ServiceCard({
   return (
     <motion.div
       id={id}
-      className={`w-full border-y-[#EFBF04] border-y-8 flex bg-white ${reverse ? "flex-row-reverse" : "flex-row"} items-center gap-10 border-b border-black/10 md:px-10 lg:px-17.5`}
+      className={`w-full border-y-[#EFBF04] p-3 border-y-8 flex bg-white ${reverse ? "flex-row-reverse" : "flex-row"} items-center gap-10 border-b border-black/10 md:px-10 lg:px-17.5`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       onViewportEnter={() => onInView?.(id)}
@@ -51,7 +51,7 @@ export default function ServiceCard({
             {index}
           </span>
         </div>
-        <GradientText text={gradientText} className="!text-[50px]" />
+        <GradientText text={gradientText} className="" />
         <div className="font-outfit font-light text-[14px] md:text-[15px] text-black/60 max-w-[420px] leading-relaxed">
           <AnimatePresence initial={false} mode="wait">
             {expanded ? (
@@ -61,7 +61,7 @@ export default function ServiceCard({
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="text-justify text-[25px] text-light"
+                className="text-left text-[20px] md:text-[25px] text-light"
                 style={{ letterSpacing: "-4%", lineHeight: "108%" }}
               >
                 {content}
@@ -73,7 +73,7 @@ export default function ServiceCard({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="line-clamp-5 text-[25px] text-light"
+                className="line-clamp-5 text-[20px] md:text-[25px] text-light text-light"
                 style={{ letterSpacing: "-4%", lineHeight: "108%" }}
               >
                 {hasMore ? preview : content}
