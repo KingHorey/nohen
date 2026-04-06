@@ -77,9 +77,9 @@ const Services = () => {
                   className={`
         p-5 md:p-6
         border-sidebar-border border-dashed
-        ${index % 2 === 0 ? "md:border-r md:border-r-gray-200/40" : ""}
-        ${index < services.length - 1 ? "border-b border-gray-100" : ""}
-        ${index < services.length - 2 ? "md:border-b md:border-gray-100" : "md:border-b-0"}
+        ${index % 2 === 0 ? "md:border-r md:border-r-gray-200/10" : ""}
+        ${index < services.length - 1 ? "border-b border-gray-100/10" : ""}
+        ${index < services.length - 2 ? "md:border-b md:border-gray-100/10" : "md:border-b-0"}
       `}
                 >
                   <h4

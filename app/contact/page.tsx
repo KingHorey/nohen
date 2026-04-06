@@ -8,7 +8,7 @@ import PageFade from "@/components/animations/pageFade";
 const Page = () => {
   return (
     <PageFade>
-      <div>
+      <div className="overflow-x-hidden">
         <Hero
           title="your IDEAS TAKE SHAPE WHEN YOU REACH OUT!"
           alt=""
@@ -17,7 +17,7 @@ const Page = () => {
           isLink={true}
           buttonLink="#contactForm"
           description="Discover our collection of modern architectural solutions for beautiful home. interiors with exceptional craftsmanship."
-          metaText="Contact Us"
+          metaText=""
         />
         <ContactCardF />
         <ScheduledHours />

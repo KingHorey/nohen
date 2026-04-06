@@ -10,17 +10,17 @@ const ScheduledHours = () => {
   return (
     <Reveal>
       <div className="bg-pink-50 p-5 md:p-10" id="workHours">
-        <div className="flex flex-col gap-8 md:flex-row md:gap-10">
+        <div className="flex flex-col min-h-[550px] gap-8 md:flex-row md:gap-10">
           <div>
             <Image
               src={ScheduleImage}
               alt=""
-              className="h-auto w-full object-cover"
+              className="h-full w-full object-cover"
               width={767}
               height={503}
             />
           </div>
-          <div className="bg-white p-5 flex flex-col space-y-5 w-full">
+          <div className="bg-white p-5 flex flex-col space-y-5 w-full pt-12">
             <div className="space-y-5">
               <GradientText
                 text="Scheduled Hours"
@@ -34,15 +34,23 @@ const ScheduledHours = () => {
                 and check our availability.
               </p>
             </div>
-            <hr />
+            <hr className=" bg-gray-200" />
             <div
               className="flex flex-col sm:flex-row justify-between gap-2 text-[18px] md:text-[25px] items-start sm:items-center border-y-border border py-3 text-[#181818]"
               style={{ letterSpacing: "-4%", lineHeight: "120%" }}
             >
-              <p className="text-[#8D8D8D]">Monday - Friday</p>
-              <p>09:00AM - 05:00PM</p>
+              <p className="text-[#8D8D8D]">Monday - Thursday</p>
+              <p>08:00AM - 18:00PM</p>
             </div>
-            <hr />
+            <hr className=" bg-gray-200" />
+            <div
+              className="flex flex-col sm:flex-row justify-between gap-2 text-[18px] md:text-[25px] items-start sm:items-center border-y-border border py-3 text-[#181818]"
+              style={{ letterSpacing: "-4%", lineHeight: "120%" }}
+            >
+              <p className="text-[#8D8D8D]">Friday</p>
+              <p>09:00AM - 17:00PM</p>
+            </div>
+            <hr className=" bg-gray-200" />
             <Button
               className="py-2.5 px-7.5 h-14 md:h-17.5 w-full sm:w-fit rounded-full text-black uppercase bg-[#EFBF04] hover:bg-[#EFBF04]/90 font-semibold"
               asChild

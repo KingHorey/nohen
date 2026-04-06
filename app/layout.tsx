@@ -77,7 +77,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col w-screen">
         <RoutePreloader />
         <Navbar />
-        <main>
+        <main className="px-2">
           {children}
           <SocialLinks />
         </main>

@@ -144,4 +144,8 @@
   html {
     @apply font-sans;
   }
+
+  button {
+    text-transform: uppercase;
+  }
 }

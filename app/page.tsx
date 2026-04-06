@@ -13,7 +13,7 @@ import PageFade from "@/components/animations/pageFade";
 export default function Home() {
   return (
     <PageFade>
-      <main className="w-screen relative">
+      <main className="w-full relative">
         <Hero
           image={HeroImage}
           alt=""
