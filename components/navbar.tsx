@@ -72,7 +72,7 @@ export default function Navbar() {
             })}
           </ul>
           <Link
-            href="#"
+                    href="https://cal.com/nohen-constructii-h3y16p/30min"
             className="hidden rounded-full py-4 lg:inline-flex items-center gap-3 px-5 shrink-0 group transition-all duration-300 hover:brightness-110 active:scale-95 bg-[#EFBF04]"
           >
             <span
