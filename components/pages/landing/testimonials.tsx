@@ -119,7 +119,7 @@ const Testimonials = () => {
     <Reveal>
       <section
         id="testimonials"
-        className="bg-[#F6F4F0] px-5 py-12 md:px-10 md:py-14 lg:h-260 lg:px-10.5 lg:py-17.5"
+        className="bg-[#F6F4F0] px-5 py-12 md:px-10 md:py-14 lg:h-260 lg:px-10.5 lg:py-17.5 overflow-hidden"
       >
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.45fr] lg:items-stretch lg:gap-12">
           <div className="grid gap-4 sm:grid-cols-2 lg:max-w-196.5">
