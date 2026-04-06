@@ -10,7 +10,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/animations/reveal";
 const Difference = () => {
   return (
     <Reveal>
-      <div className="p-8 md:p-17.5 space-y-8">
+      <div className="p-8 md:p-10.5 space-y-8">
         <div className="lg:w-4/6">
           <GradientText
             text="What sets Nohen Constructii Ltd apart is our deliberate pursuit of complexity."
@@ -54,7 +54,12 @@ export const DifferenceCards = () => {
         <StaggerItem key={index}>
           <div className="p-8 gap-10 relative h-full  flex items-center">
             <p className="text-white font-satoshi text-[25px]">{title}</p>
-            <Image alt={title} src={image} className="absolute object-cover h-full inset-0" fill />
+            <Image
+              alt={title}
+              src={image}
+              className="absolute object-cover h-full inset-0"
+              fill
+            />
           </div>
         </StaggerItem>
       ))}

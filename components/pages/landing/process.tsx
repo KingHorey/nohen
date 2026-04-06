@@ -17,7 +17,10 @@ import { Reveal, Stagger, StaggerItem } from "@/components/animations/reveal";
 const Process = () => {
   return (
     <Reveal>
-      <section id="ourProcess" className="relative space-y-10 bg-white p-6 md:p-17.5">
+      <section
+        id="ourProcess"
+        className="relative space-y-10 bg-white p-6 md:p-10.5"
+      >
         <SectionTag text="Our Process" className="text-black" />
         <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-x-10">
           <GradientText
@@ -113,7 +116,13 @@ export const InfoView = ({
     >
       {image && (
         <div className="absolute inset-0">
-          <Image src={image} alt="" fill className="inset-0 object-cover" sizes="100vw" />
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="inset-0 object-cover"
+            sizes="100vw"
+          />
         </div>
       )}
       <div
@@ -124,7 +133,6 @@ export const InfoView = ({
             className={`${clsx("w-full font-dm-sans text-[28px] font-medium md:w-72.5 md:text-[40px]", titleClassName)}`}
           >
             {title}
-
           </p>
           <div className="pr-2">
             <Icon className="mx-auto md:ml-auto h-32 w-32 md:h-auto md:w-fit md:hidden" />

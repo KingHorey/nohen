@@ -22,7 +22,7 @@ const teamMembers = [
 const Team = () => {
   return (
     <Reveal>
-      <section id="ourTeam" className="bg-white p-8 md:p-17.5 ">
+      <section id="ourTeam" className="bg-white p-8 md:p-10.5 ">
         <div className="space-y-10">
           <SectionTag text="our team" className="text-black" />
           <div className="flex items-center text-[25px] md:flex-row flex-col">

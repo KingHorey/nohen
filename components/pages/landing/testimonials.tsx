@@ -9,33 +9,93 @@ import { Reveal } from "@/components/animations/reveal";
 const reviews = [
   {
     quote:
-      "Nohen Constructii fixed all major construction delays and quality issues. They delivered exactly as promised.",
+      "Nohen Constructii took on the construction of my 5-bedroom duplex on a very challenging slope in Maitama. Many contractors declined the job, but they delivered an outstanding building ahead of schedule. Their attention to detail is unmatched. Highly recommended!",
+    name: "Mr. Chinedu Okoro",
+    location: "Abuja",
+  },
+  {
+    quote:
+      "We needed a modern commercial plaza in Kano with a unique architectural concept. Nohen Constructii handled the entire design and build process flawlessly. The quality of work and finishing exceeded our expectations. Thank you!",
     name: "Mrs. Aisha Bello",
     location: "Kano",
   },
   {
     quote:
-      "The foundation work and structural detailing were excellent. We are already discussing our second project with them.",
+      "As a developer, I have worked with many firms, but Nohen Constructii stands out for taking on difficult projects others run away from. They completed our residential estate in Lekki without any major issues. Excellent team!",
+    name: "Engr. Olusegun Adebayo",
+    location: "Lagos",
+  },
+  {
+    quote:
+      "From the initial design consultation to the final interior finishing, Nohen Constructii made the whole process smooth. They built our family home exactly as we envisioned it. We are extremely satisfied.",
     name: "Dr. Fatima Yusuf",
     location: "Abuja",
   },
   {
     quote:
-      "Communication was clear from kickoff to closeout. Every interim milestone was hit on schedule.",
-    name: "Mr. Chinedu Okoro",
-    location: "Abia",
-  },
-  {
-    quote:
-      "Nohen Constructii handled our community-backed development with professionalism and care.",
+      "They constructed our hotel on a difficult terrain in Enugu. The structural work and creativity they brought to the project were impressive. Timely delivery and professional conduct throughout. God bless Nohen Constructii!",
     name: "Mr. Emeka Nwosu",
     location: "Enugu",
   },
   {
     quote:
-      "As a developer, I need teams I can trust. Nohen delivered quality that speaks for itself.",
-    name: "Engr. Olusegun Adebayo",
-    location: "Lagos",
+      "We gave them a very complex commercial building with unusual features that other companies avoided. They delivered beyond expectations. If you have a challenging project, these are the people to call.",
+    name: "Anonymous Client",
+    location: "Port Harcourt",
+  },
+  {
+    quote:
+      "Nohen Constructii handled a government-backed community project for us. Their ability to manage logistics across states and maintain high quality standards is remarkable. We will definitely work with them again.",
+    name: "Hon. Ibrahim Mohammed",
+    location: "Gombe",
+  },
+  {
+    quote:
+      "The interior design and build of our home in Asaba was handled perfectly. They listened to every detail and brought our vision to life. The finishing is top-notch. Very professional company!",
+    name: "Mrs. Ngozi Eze",
+    location: "Asaba",
+  },
+  {
+    quote:
+      "We approached them for a tricky renovation and extension project on an old commercial building. They turned it into a modern masterpiece. Their experience since 2014 really shows in their work.",
+    name: "Mr. Tunde Balogun",
+    location: "Ibadan",
+  },
+  {
+    quote:
+      "Nohen Constructii managed the full design and construction of our office complex. Even with some changes during the project, they remained flexible and professional. Great value for money.",
+    name: "Engr. Blessing Akpan",
+    location: "Calabar",
+  },
+  {
+    quote:
+      "Building on rocky terrain in the outskirts of Abuja was no small task, but Nohen Constructii made it look easy. The quality of materials and workmanship is excellent. We are proud of our new home.",
+    name: "Mr. David Akintola",
+    location: "Abuja",
+  },
+  {
+    quote:
+      "After several disappointments with other contractors, we finally found Nohen Constructii. They took our difficult concept and delivered a beautiful residential building on time and within budget. Truly reliable.",
+    name: "Anonymous Client",
+    location: "Kaduna",
+  },
+  {
+    quote:
+      "We are grateful for the commercial warehouse they built for us. Despite the logistical challenges, they delivered exceptional work. Their nationwide experience is evident. Highly professional!",
+    name: "Alhaji Sani Abubakar",
+    location: "Maiduguri",
+  },
+  {
+    quote:
+      "The architectural design and interior they did for our boutique hotel was outstanding. Nohen Constructii does not just build - they create beautiful, functional spaces. We highly recommend them.",
+    name: "Ms. Chioma Okafor",
+    location: "Owerri",
+  },
+  {
+    quote:
+      "Working with Nohen Constructii on our family mansion was one of the best decisions we made. They handled every challenge with expertise and kept us informed throughout. The result speaks for itself after many years in business.",
+    name: "Mr. Rotimi Williams",
+    location: "Benin City",
   },
 ];
 
@@ -59,7 +119,7 @@ const Testimonials = () => {
     <Reveal>
       <section
         id="testimonials"
-        className="bg-[#F6F4F0] px-5 py-12 md:px-10 md:py-14 lg:h-260 lg:px-17.5 lg:py-17.5"
+        className="bg-[#F6F4F0] px-5 py-12 md:px-10 md:py-14 lg:h-260 lg:px-10.5 lg:py-17.5"
       >
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.45fr] lg:items-stretch lg:gap-12">
           <div className="grid gap-4 sm:grid-cols-2 lg:max-w-196.5">

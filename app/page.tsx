@@ -24,7 +24,6 @@ export default function Home() {
           isLink={true}
           buttonText="Start a project"
         />
-        <Network />
         <AboutUs />
         <Services />
         <Process />

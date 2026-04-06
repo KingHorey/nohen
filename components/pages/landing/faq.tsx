@@ -13,25 +13,53 @@ import Link from "next/link";
 
 const questions = [
   {
-    question: "What is Nohen Constructii?",
+    question: "What services does Nohen Constructii Ltd. offer?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur sagittis facilisis neque lectus eget amet morbi tristique metus dolor nulla amet vulputate ullamcorper dui nibh odio.",
-    value: "nohen",
+      "Nohen Constructii Ltd. specializes in architectural designs, design consultation, interior design, and full design-and-build services for both complex residential and commercial projects. We also provide professional project management services.",
+    value: "services",
   },
   {
-    question: "What types of architecture projects do they specialize in?",
-    answer: "",
-    value: "types",
+    question: "What types of clients do you work with?",
+    answer:
+      "We work with a wide range of clients including individuals (homeowners), government agencies, and corporate organizations across Nigeria.",
+    value: "clients",
   },
   {
-    question: "Do you work on projects outside your city or region?",
-    answer: "",
-    value: "outside",
+    question: "Which parts of Nigeria do you serve?",
+    answer:
+      "We have successfully executed projects in over 26 states in Nigeria. Wherever your project is located, we have the experience and capacity to deliver.",
+    value: "coverage",
   },
   {
-    question: "Where are your offices located?",
-    answer: "",
-    value: "offices",
+    question:
+      "What makes Nohen Constructii different from other construction companies?",
+    answer:
+      "We specialize in taking on challenging and complex projects that many companies tend to avoid - difficult terrains, unique architectural concepts, and technically demanding structures. We run towards difficult projects while others run away from them.",
+    value: "difference",
+  },
+  {
+    question: "Do you offer design and build services?",
+    answer:
+      "Yes. Our core strength is in Design & Build. We handle the architectural design, structural engineering, interior design, and full construction under one roof. We also offer standalone design consultation and project management services.",
+    value: "design-build",
+  },
+  {
+    question: "How do you determine the cost of a project?",
+    answer:
+      "Project pricing is determined based on your specific requirements, design complexity, location, materials chosen, and other project details. We provide detailed, transparent quotations after proper consultation and site assessment.",
+    value: "project-cost",
+  },
+  {
+    question: "Can you handle difficult or unusual construction projects?",
+    answer:
+      "Absolutely. This is one of our biggest strengths. We thrive on complex residential and commercial buildings, difficult terrains, and innovative architectural concepts that others find challenging.",
+    value: "complex-projects",
+  },
+  {
+    question: "How do I get started with Nohen Constructii Ltd.?",
+    answer:
+      "Simply contact us through our website, phone, or email. We will schedule a consultation (physical or virtual), listen to your vision, assess the site if necessary, and provide professional advice and a detailed proposal tailored to your needs.",
+    value: "get-started",
   },
 ];
 
@@ -40,10 +68,10 @@ const Faq = () => {
     <Reveal>
       <section
         id="faq"
-        className="relative bg-white px-5 py-12 md:px-10 lg:h-216.5 lg:max-h-164 lg:px-17.5 lg:py-0"
+        className="relative bg-white px-5 py-12 md:px-10 h-fit lg:px-10.5 lg:py-0"
       >
         <div className="flex w-full flex-col gap-8 py-24 lg:flex-row lg:justify-between lg:gap-x-10">
-          <div className="w-full space-y-3 lg:flex lg:flex-col lg:justify-center">
+          <div className="w-full space-y-3 lg:flex lg:flex-col">
             <GradientText text="You ask, We answer!" />
             <div className="w-full text-black md:w-4/6">
               <p className="font-semibold">

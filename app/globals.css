@@ -137,6 +137,11 @@
     @apply border-border outline-ring/50;
   }
 
+  body[data-project-gallery-open="true"] header,
+  body[data-project-gallery-open="true"] nav {
+    display: none;
+  }
+
   body {
     @apply bg-background text-foreground;
   }

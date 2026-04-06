@@ -19,7 +19,7 @@ const Cases = () => {
   return (
     <Reveal>
       <div>
-        <div className="bg-white space-y-5 px-5 py-10 md:p-17.5">
+        <div className="bg-white space-y-5 px-5 py-10 md:p-10.5">
           <div className="space-y-4">
             <SectionTag text="Proven Results" className="text-black" />
             <GradientText text="Here are some of our successful projects that showcase how we help our clients achieve their dream plans." />

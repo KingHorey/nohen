@@ -56,7 +56,7 @@ const Services = () => {
     <Reveal>
       <section
         id="services"
-        className="relative flex items-center overflow-hidden px-5 py-12 md:max-h-237 md:p-17.5 md:py-16"
+        className="relative flex items-center overflow-hidden px-5 py-12 md:max-h-237 md:p-10.5 md:py-16"
       >
         <div className="absolute inset-0">
           <Image

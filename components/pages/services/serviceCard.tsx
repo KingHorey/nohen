@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import Image, { StaticImageData } from "next/image"
-import GradientText from "@/components/gradientText"
-import { motion, AnimatePresence } from "motion/react"
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import Image, { StaticImageData } from "next/image";
+import GradientText from "@/components/gradientText";
+import { motion, AnimatePresence } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 interface ServiceCardProps {
-  index: number
-  image: StaticImageData
-  id: string
-  gradientText: string
-  reverse?: boolean
-  title: string
-  content: string
-  onInView?: (id: string) => void
+  index: number;
+  image: StaticImageData;
+  id: string;
+  gradientText: string;
+  reverse?: boolean;
+  title: string;
+  content: string;
+  onInView?: (id: string) => void;
 }
 
 export default function ServiceCard({
@@ -27,15 +27,15 @@ export default function ServiceCard({
   content,
   onInView,
 }: ServiceCardProps) {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
 
-  const preview = content.slice(0, 500) + "..."
-  const hasMore = content.length > 500
+  const preview = content.slice(0, 500) + "...";
+  const hasMore = content.length > 500;
 
   return (
     <motion.div
       id={id}
-      className={`w-full border-y-[#EFBF04] p-3 border-y-8 flex bg-white ${reverse ? "flex-row-reverse" : "flex-row"} items-center gap-10 border-b border-black/10 md:px-10 lg:px-17.5`}
+      className={`w-full border-y-[#EFBF04] p-3 border-y-8 flex bg-white ${reverse ? "flex-row-reverse" : "flex-row"} items-center gap-10 border-b border-black/10 md:px-10 lg:px-10.5`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       onViewportEnter={() => onInView?.(id)}
@@ -103,5 +103,5 @@ export default function ServiceCard({
         />
       </div>
     </motion.div>
-  )
+  );
 }

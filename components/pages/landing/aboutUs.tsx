@@ -41,7 +41,10 @@ const info = [
 const AboutUs = () => {
   return (
     <Reveal>
-      <section id="about" className="bg-white flex flex-col lg:flex-row gap-10 p-8 md:p-17.5">
+      <section
+        id="about"
+        className="bg-white flex flex-col lg:flex-row gap-10 p-8 md:p-10.5 items-center justify-between"
+      >
         <div className="space-y-5 w-full lg:w-1/2">
           <SectionTag text="About Us" className="text-black" />
           <GradientText text="From homes to offices, we bring your vision to life. Our results speak for themselves." />
@@ -55,7 +58,10 @@ const AboutUs = () => {
                 <ArrowRightIcon />
               </Link>
             </Button>
-            <p className="text-[25px] text-left md:text-right" style={{ color: "gray" }}>
+            <p
+              className="text-[25px] text-left md:text-right"
+              style={{ color: "gray" }}
+            >
               Good design is invisible. It supports life quietly, with clarity
               and purpose.
             </p>

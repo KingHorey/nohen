@@ -35,7 +35,10 @@ const projectCard: ProjectCard[] = [
 const FeaturedProjects = () => {
   return (
     <Reveal>
-      <section id="featuredProjects" className="relative space-y-5 p-6 md:p-17.5">
+      <section
+        id="featuredProjects"
+        className="relative space-y-5 p-6 md:p-10.5"
+      >
         <SectionTag text="Featured Projects" className="" />
         <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <p

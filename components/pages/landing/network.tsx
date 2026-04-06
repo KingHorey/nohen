@@ -22,7 +22,7 @@ const Network = () => {
     <Reveal>
       <section
         id="network"
-        className="p-8 md:p-17.5 bg-white space-y-5 md:space-y-12 overflow-hidden"
+        className="p-8 md:p-10.5  bg-white space-y-5 md:space-y-12 overflow-hidden"
       >
         <SectionTag text="GLobal Network" className="text-black" />
         <div className="flex md:flex-row space-y-3 flex-col items-end justify-between">

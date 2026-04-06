@@ -1,41 +1,103 @@
 "use client";
 
-import HillTop from "@/assets/images/hilltop_residence.png"
-import { useRef, useState, useCallback } from "react";
+import HillTop from "@/assets/images/hilltop_residence.png";
+import Image from "next/image";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ProjectHero from "@/components/projectHero";
+import ProjectDetailConstruction from "@/assets/images/project_detail1.png";
+import ProjectDetailFrontElevation from "@/assets/images/project_detail.png";
+import ProjectDetailMainFacade from "@/assets/images/project_detail2.png";
+import ProjectDetailFoundation from "@/assets/images/project_detail5.png";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const PROJECT_IMAGES = [
-  { id: 1, label: "Front Elevation" },
-  { id: 2, label: "Side View" },
-  { id: 3, label: "Main Entrance" },
-  { id: 4, label: "Garden Wing" },
-  { id: 5, label: "Rear Facade" },
-  { id: 6, label: "Rooftop Deck" },
+  {
+    id: 1,
+    label: "Construction Progress",
+    src: ProjectDetailConstruction,
+  },
+  {
+    id: 2,
+    label: "Front Elevation",
+    src: ProjectDetailFrontElevation,
+  },
+  {
+    id: 3,
+    label: "Main Facade",
+    src: ProjectDetailMainFacade,
+  },
+  {
+    id: 4,
+    label: "Foundation Works",
+    src: ProjectDetailFoundation,
+  },
 ];
 
-const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#" },
-  { label: "Twitter", href: "#", highlighted: true },
-  { label: "LinkedIn", href: "#" },
-  { label: "Instagram", href: "#" },
-];
+const CARD_WIDTH = 402;
+const CARD_HEIGHT = 462;
+const CARD_GAP = 12;
 
 export default function ProjectDetail() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(1);
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(1);
 
-  const scrollToIndex = useCallback((index: number) => {
-    const container = scrollRef.current;
-    if (!container) return;
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const updateWidth = () => setViewportWidth(viewport.clientWidth);
+    updateWidth();
+
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(viewport);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    document.body.dataset.projectGalleryOpen = isGalleryOpen ? "true" : "false";
+    document.body.style.overflow = isGalleryOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+      delete document.body.dataset.projectGalleryOpen;
+    };
+  }, [isGalleryOpen]);
+
+  const scrollToIndex = (index: number) => {
     const clamped = Math.max(0, Math.min(index, PROJECT_IMAGES.length - 1));
     setActiveIndex(clamped);
-    const card = container.children[clamped] as HTMLElement;
-    if (card) {
-      const offset =
-        card.offsetLeft - container.clientWidth / 2 + card.clientWidth / 2;
-      container.scrollTo({ left: offset, behavior: "smooth" });
-    }
-  }, []);
+  };
+
+  const openGallery = () => {
+    setGalleryIndex(activeIndex);
+    setIsGalleryOpen(true);
+  };
+
+  const closeGallery = () => setIsGalleryOpen(false);
+
+  const showGalleryPrev = () => {
+    setGalleryIndex((index) =>
+      Math.max(0, Math.min(index - 1, PROJECT_IMAGES.length - 1)),
+    );
+  };
+
+  const showGalleryNext = () => {
+    setGalleryIndex((index) =>
+      Math.max(0, Math.min(index + 1, PROJECT_IMAGES.length - 1)),
+    );
+  };
+
+  const trackTransform = useMemo(() => {
+    const offset =
+      viewportWidth / 2 -
+      (activeIndex * (CARD_WIDTH + CARD_GAP) + CARD_WIDTH / 2);
+
+    return `translateX(${offset}px)`;
+  }, [activeIndex, viewportWidth]);
 
   const handlePrev = () => scrollToIndex(activeIndex - 1);
   const handleNext = () => scrollToIndex(activeIndex + 1);
@@ -49,64 +111,108 @@ export default function ProjectDetail() {
       <section className="max-w-8xl mx-auto grid grid-cols-1 gap-8 border-b-2 border-b-gray-400/20 px-5 pt-0 pb-0 md:grid-cols-[500px_1fr] md:gap-12 md:px-8">
         <div className="md:border-r-2 md:border-r-gray-400/20 border-b border-b-gray-400/20 md:border-b-0">
           <div className="py-8 md:py-10">
-            <h2 className="text-3xl md:text-5xl font-medium leading-tight mb-3" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>
+            <h2
+              className="text-3xl md:text-5xl font-medium leading-tight mb-3"
+              style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+            >
               Details about
               <br />
               the project
             </h2>
-            <p className="text-base sm:text-lg md:text-2xl font-satoshi text-black/50 mb-8 leading-relaxed" style={{ lineHeight: "120%" }}>
+            <p
+              className="text-base sm:text-lg md:text-2xl font-satoshi text-black/50 mb-8 leading-relaxed"
+              style={{ lineHeight: "120%" }}
+            >
               Unleashing the energy of innovation through intelligent,
               performance-driven design.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
               <div>
-                <p className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1" style={{ letterSpacing: "-4%", lineHeight: "118%" }}>
+                <p
+                  className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1"
+                  style={{ letterSpacing: "-4%", lineHeight: "118%" }}
+                >
                   Client
                 </p>
-                <p className="text-xl md:text-2xl font-medium" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>Sarah Collins</p>
+                <p
+                  className="text-xl md:text-2xl font-medium"
+                  style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+                >
+                  Sarah Collins
+                </p>
               </div>
               <div>
-                <p className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1" style={{ letterSpacing: "-4%", lineHeight: "118%" }}>
+                <p
+                  className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1"
+                  style={{ letterSpacing: "-4%", lineHeight: "118%" }}
+                >
                   Location
                 </p>
-                <p className="text-xl md:text-2xl font-medium" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>Nijmegen, NED</p>
+                <p
+                  className="text-xl md:text-2xl font-medium"
+                  style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+                >
+                  Nijmegen, NED
+                </p>
               </div>
               <div>
-                <p className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1" style={{ letterSpacing: "-4%", lineHeight: "118%" }}>
+                <p
+                  className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1"
+                  style={{ letterSpacing: "-4%", lineHeight: "118%" }}
+                >
                   Total Area
                 </p>
-                <p className="text-xl md:text-2xl font-medium" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>1209 sqm</p>
+                <p
+                  className="text-xl md:text-2xl font-medium"
+                  style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+                >
+                  1209 sqm
+                </p>
               </div>
               <div>
-                <p className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1" style={{ letterSpacing: "-4%", lineHeight: "118%" }}>
+                <p
+                  className="text-base font-satoshi uppercase tracking-widest text-gray-400 mb-1"
+                  style={{ letterSpacing: "-4%", lineHeight: "118%" }}
+                >
                   Timeline
                 </p>
-                <p className="text-xl md:text-2xl font-medium" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>2014</p>
+                <p
+                  className="text-xl md:text-2xl font-medium"
+                  style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+                >
+                  2014
+                </p>
               </div>
             </div>
           </div>
         </div>
         <div>
           <div className="py-8 md:py-10">
-            <h1 className="text-3xl md:text-5xl font-medium leading-tight mb-6" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>
+            <h1
+              className="text-3xl md:text-5xl font-medium leading-tight mb-6"
+              style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+            >
               Hilltop Residence represents the intersection of energy and design
             </h1>
-            <div className="space-y-4 text-base sm:text-lg md:text-2xl font-satoshi text-gray-400 leading-relaxed" style={{ letterSpacing: "-4%", lineHeight: "120%" }}>
+            <div
+              className="space-y-4 text-base sm:text-lg md:text-2xl font-satoshi text-gray-400 leading-relaxed"
+              style={{ letterSpacing: "-4%", lineHeight: "120%" }}
+            >
               <p>
                 Nohen Constructii Ltd is an architectural and construction
                 practice dedicated to delivering thoughtful, enduring, and
                 well-executed built environments. For nearly a decade, the firm
                 has built a reputation for translating ideas into functional,
                 elegant structures that respond to both human needs and
-                environmental context. Our work reflects a commitment to clarity,
-                precision, and timeless design.
+                environmental context. Our work reflects a commitment to
+                clarity, precision, and timeless design.
               </p>
               <p>
-                Since its establishment, the company has successfully contributed
-                to a diverse range of projects, approaching each one with a
-                balance of creativity and technical expertise. We believe that
-                architecture is more than building; it is the creation of spaces
-                that inspire, serve, and endure. Our process is guided by
+                Since its establishment, the company has successfully
+                contributed to a diverse range of projects, approaching each one
+                with a balance of creativity and technical expertise. We believe
+                that architecture is more than building; it is the creation of
+                spaces that inspire, serve, and endure. Our process is guided by
                 collaboration, attention to detail, and a deep understanding of
                 our clients&apos; vision.
               </p>
@@ -122,74 +228,118 @@ export default function ProjectDetail() {
       </section>
       <section className="py-10 md:py-12">
         <div className="max-w-6xl mx-auto px-5 md:px-8 mb-8 text-center">
-          <h2 className="text-3xl font-dm-sans md:text-5xl font-medium mb-2" style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}>
+          <h2
+            className="text-3xl font-dm-sans md:text-5xl font-medium mb-2"
+            style={{ letterSpacing: "-8%", lineHeight: "115.5%" }}
+          >
             Different view of the project
           </h2>
-          <p className="text-base md:text-2xl font-satoshi text-gray-400" style={{ letterSpacing: "-4%", lineHeight: "120%" }}>
+          <p
+            className="text-base md:text-2xl font-satoshi text-gray-400"
+            style={{ letterSpacing: "-4%", lineHeight: "120%" }}
+          >
             Good design is invisible. It supports life quietly,
             <br className="hidden md:block" />
             with clarity and purpose.
           </p>
         </div>
 
-        {/* Scrollable Strip */}
-        <div
-          ref={scrollRef}
-          className="flex gap-3 overflow-x-auto px-5 md:px-8 scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {PROJECT_IMAGES.map((img, i) => {
-            const isActive = i === activeIndex;
-            return (
-              <div
-                key={img.id}
-                onClick={() => scrollToIndex(i)}
-                className="relative flex-shrink-0 cursor-pointer overflow-hidden transition-all duration-500"
-                style={{
-                  width: isActive ? "min(75vw, 340px)" : "min(42vw, 160px)",
-                  height: isActive ? "min(55vw, 260px)" : "min(48vw, 200px)",
-                  alignSelf: "center",
-                  borderRadius: 4,
-                }}
-              >
-                {/* Placeholder block */}
+        {/* Centered Strip */}
+        <div ref={viewportRef} className="w-full overflow-hidden py-8 md:py-10">
+          <div
+            className="flex w-max items-center transition-transform duration-500 ease-out will-change-transform"
+            style={{
+              transform: trackTransform,
+              gap: `${CARD_GAP}px`,
+            }}
+          >
+            {PROJECT_IMAGES.map((img, i) => {
+              const isActive = i === activeIndex;
+              return (
                 <div
-                  className="absolute inset-0"
+                  key={img.id}
+                  onClick={() => scrollToIndex(i)}
+                  className="relative shrink-0 cursor-pointer overflow-hidden transition-transform duration-500 ease-out"
                   style={{
-                    background: isActive
-                      ? "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #222 100%)"
-                      : "linear-gradient(135deg, #222 0%, #2e2e2e 100%)",
-                    transition: "background 0.4s ease",
+                    width: `${CARD_WIDTH}px`,
+                    height: `${CARD_HEIGHT}px`,
+                    borderRadius: 4,
+                    transform: isActive ? "scale(1.08)" : "scale(1)",
+                    transformOrigin: "center center",
+                    zIndex: isActive ? 20 : 10,
                   }}
                 >
-                  {/* subtle grid texture */}
-                  <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage:
-                        "repeating-linear-gradient(0deg, transparent, transparent 20px, #fff 20px, #fff 21px), repeating-linear-gradient(90deg, transparent, transparent 20px, #fff 20px, #fff 21px)",
-                    }}
+                  <Image
+                    src={img.src}
+                    alt={img.label}
+                    fill
+                    className="object-cover z-0"
+                    sizes="402px"
                   />
+                  {isActive && (
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        openGallery();
+                      }}
+                      className="absolute left-1/2 top-1/2 z-10 flex h-44.5 w-52.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-white text-center shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+                    >
+                      <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#181818]">
+                        Click to expand
+                      </span>
+                    </button>
+                  )}
                 </div>
-                {isActive && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                    <div className="bg-[#EFBF04]/90 text-[#181818] text-[10px] font-bold uppercase tracking-widest px-3 py-2 rounded-sm md:px-4">
-                      Click to expand
-                    </div>
-                    <p className="text-black text-xs mt-1">{img.label}</p>
-                  </div>
-                )}
-                {!isActive && (
-                  <div className="absolute inset-0 bg-black/40 flex items-end p-2">
-                    <p className="text-black text-[10px] uppercase tracking-wide">
-                      {img.label}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
+
+        {isGalleryOpen && (
+          <div className="fixed inset-0 z-999999 flex items-center justify-center bg-black/80 px-4 py-8">
+            <button
+              type="button"
+              aria-label="Close gallery"
+              onClick={closeGallery}
+              className="absolute right-4 top-4 z-20 flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            >
+              ✕
+            </button>
+
+            <div className="relative z-10 w-full max-w-5xl">
+              <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-black/30">
+                <Image
+                  src={PROJECT_IMAGES[galleryIndex].src}
+                  alt={PROJECT_IMAGES[galleryIndex].label}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  priority
+                />
+              </div>
+
+              <div className="pointer-events-none absolute left-0 top-1/2 flex w-full -translate-y-1/2 items-center justify-between px-0 sm:px-0">
+                <button
+                  type="button"
+                  onClick={showGalleryPrev}
+                  disabled={galleryIndex === 0}
+                  className="pointer-events-auto ml-[-18px] flex size-12 items-center justify-center rounded-full bg-white/80 text-black shadow-lg transition-all hover:scale-105 disabled:opacity-30 sm:size-14"
+                >
+                  <ChevronLeftIcon className="size-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={showGalleryNext}
+                  disabled={galleryIndex === PROJECT_IMAGES.length - 1}
+                  className="pointer-events-auto mr-[-18px] flex size-12 items-center justify-center rounded-full bg-[#EFBF04] text-black shadow-lg transition-all hover:scale-105 disabled:opacity-30 sm:size-14"
+                >
+                  <ChevronRightIcon className="size-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Navigation Arrows */}
         <div className="flex justify-center gap-4 mt-8">

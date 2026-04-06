@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <header>
       <nav
-        className={`w-full fixed z-9999999 top-0 overflow-hidden py-3 transition-colors duration-300 ${
+        className={`w-full fixed z-9999999999 top-0 overflow-hidden py-3 transition-colors duration-300 ${
           isProjectDetailPage
             ? "bg-white"
             : scrolled
@@ -37,7 +37,7 @@ export default function Navbar() {
               : "bg-transparent"
         }`}
       >
-        <div className="relative z-10 flex items-center justify-between px-6 md:px-10 lg:px-16 h-18">
+        <div className="relative z-10 flex items-center justify-between px-6 md:px-10 lg:px-10 h-18">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <div className="transition-transform duration-300 group-hover:scale-105">
               <NohenLogo useDarkOnLight={isProjectDetailPage} />

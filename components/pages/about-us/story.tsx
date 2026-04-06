@@ -11,7 +11,7 @@ const Story = () => {
   return (
     <Reveal>
       <div
-        className="grid grid-cols-1 gap-8 bg-black p-8 md:grid-cols-[1fr_3fr] md:gap-0 md:p-17.5"
+        className="grid grid-cols-1 gap-8 bg-black p-8 md:grid-cols-[1fr_3fr] md:gap-0 md:p-10.5"
         id="ourStory"
       >
         <div>
