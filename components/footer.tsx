@@ -78,7 +78,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="absolute -bottom-10 pl-5 flex flex-col uppercase  mix-blend-luminosity">
+      <div className="absolute bottom-8 pl-5 flex flex-col uppercase  mix-blend-luminosity">
         <p
           className="text-[437.79px] bg-linear-to-b mix-blend-luminosity relative -bottom-40 to-[#EFBF04]/5 from-[#181818]/5 bg-clip-text text-transparent"
           style={{ lineHeight: "94%", letterSpacing: "-0.08em" }}
@@ -86,7 +86,7 @@ export default function Footer() {
           Nohen
         </p>
         <p
-          className="text-[230px] relative -bottom-10 w-full bg-linear-to-b mix-blend-luminosity from-[#EFBF04]/5 to-[#181818]/5 bg-clip-text text-transparent"
+          className="text-[250px] relative -bottom-10 w-full bg-linear-to-b mix-blend-luminosity from-[#EFBF04]/5 to-[#181818]/5 bg-clip-text text-transparent"
           style={{ lineHeight: "94%", letterSpacing: "-0.08em" }}
         >
           Constructii
